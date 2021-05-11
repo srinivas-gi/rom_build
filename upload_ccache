@@ -11,5 +11,5 @@ com ()
 time com ccache 1 # Compression level 1, its enough
 
 mkdir -p ~/.config/rclone
-echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
+echo "ENCRYPTED[d79fcbbac39cbac216b6a219bc5d5025976c4b00e84fff28e328aec4e91ed91be782dc8c9c897d502a476e2e1970417a]" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
 time rclone copy SyASx.gz aosp:ccache -P # apon is my rclone config name (first line without [] of ~/.config/rclone/rclone.conf file from rclone setupped pc), ccache/ci2 is where ccache will be saved in my cloud, use yours one
